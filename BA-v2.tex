@@ -236,7 +236,7 @@ k_{yx}(\mathbf{x},\mathbf{x}') & k_{yy}(\mathbf{x},\mathbf{x}')
 \sigma_{l,yx} & \sigma_{l,yy}^2
 \end{array} \right]  e^{(\mathbf{x}-\mathbf{x}')^2/2l^2} \equiv \bsS_ke^{(\mathbf{x}-\mathbf{x}')^2/2l^2} ,
 \end{equation}
-subject to the constraints $\sigma_{l,xy}=\sigma{l,yx}$ and, unless a clear reason for discriminating between spatial directions is apparent, $\sigma_{l,xx}=\sigma_{l,yy}$.
+subject to the constraints $\sigma_{l,xy}=\sigma_{l,yx}$ and, unless a clear reason for discriminating between spatial directions is apparent, $\sigma_{l,xx}=\sigma_{l,yy}$.
 
 This matrix represents the correlation between each pair of components at just one particular pair of locations $\mathbf{x}$ and $\mathbf{x}'$. Generalizing the construction of the covariance function matrices $K$, $K_\ast$ and $K_{\ast\ast}$:
 \begin{eqnarray}
@@ -285,10 +285,10 @@ In the vector-output gaussian process described above, there are three hyperpara
 \end{equation}
 which can be used both to define a maximum-likelihood choice of hyperparameters and in likelihood sampling to generate samples of points from the distribution in the target frame.
 
-This completes the description of the necessary formalism for Bayesian astrometric sampling. As presented, an input set of matched catalogues whose data are object locations expressed as bivariate normal distributions will define a total likelihood expression $\mathcal{L}(\bsT_b|D) + \mathcal{L}(\bsT_\mathrm{HP}|D)$. Sampling this likelihood, perhaps with the additional step of sampling the location in the target frame when it is specified as a distribution, will produce a sequences of locations in the target frame that can be treated as an estimate of the posterior astrometric mapping solution.
+This completes the description of the necessary formalism for Bayesian astrometric sampling. As presented, an input set of matched catalogues whose data are object locations expressed as bivariate normal distributions will define a total likelihood expression $\mathcal{L}(\bsT_b|D) + \mathcal{L}(\bsT_\mathrm{HP}|D)$. Sampling this likelihood, perhaps with the additional step of sampling the location in the initial frame when it is specified as a distribution, will produce a sequence of locations in the target frame that can be treated as an estimate of the posterior astrometric mapping solution.
 
 \section{Normal approximation to astrometric mapping}\label{sec:normapprox}
-Likelihood sampling is the most comprehensive method of generating an astrometric mapping in the target frame, but frequently an approximation the distribution in the target frame will be desired so that the astrometric query can return a concise result. This can be achieved with the addition of two assumptions, neither particularly burdensome:
+Likelihood sampling is the most comprehensive method of generating an astrometric mapping in the target frame, but frequently an approximation the distribution in the target frame will be desired so that the astrometric query can return a concise result. This can be achieved with the addition of two assumptions, neither of which is burdensome:
 \begin{enumerate}[(i)]
 \item When the uncertainties on the observational data are small relative to the scale of the image, the background mapping probability distribution will be well approximated by a seven-dimensional multivariate normal distribution in the parameters $\bsT_b$;
 \item furthermore, when the background mapping distribution is well constrained about a maximum likelihood value $\bsT_b^\mathrm{ML}$, the gaussian process hyperparameters can be conditioned just once, setting $p(\bsT_\mathrm{HP})$ to a delta function at $\bsT_\mathrm{HP}^\mathrm{ML}$.
