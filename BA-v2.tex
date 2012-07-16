@@ -59,15 +59,25 @@
 %\altaffiltext{1}{}
 
 \begin{abstract}
-We provide a scheme for probabilistic astrometry incorporating uncertainty distributions in matched object locations, as well in the astrometric mapping itself. We consider the case of astrometric calibration involving image alignment with linear transformations---translation, scaling and rotation---followed by non-parametric regression to account for localized distortions. The probabilistic mapping between frames that results can produce non-trivial distributions in the target frame, allowing for MCMC sampling to be used to propagate positions. Additionally, we present an accurate approximation to this process where the image alignment probability distribution can be described analytically, so that an astrometric query can be handled quickly and concisely, returning a location in the target frame that has its uncertainty specified in two spatial coordinates with covariance between them. We discuss generalizing this formalism to incorporate prior knowledge on astrometric components such as proper motion and parallax. An implementation of this scheme, including extensive documentation and examples, is available at \href{}{}%provide an explicit application to the case of bivariate normal distributions in the catalogue space of tie objects. %MCMC is used to generate a posterior estimate for the joint distribution of the transformation parameters. The use of distortion maps to represent the maximum likelihood transformation is also considered.
+We provide a scheme for probabilistic astrometry incorporating uncertainty distributions in matched object locations, as well in the astrometric mapping itself. We consider the case of astrometric calibration involving image alignment with linear transformations---translation, scaling and rotation---followed by non-parametric regression to account for localized distortions. The probabilistic mapping between frames that results can produce non-trivial distributions in the target frame, allowing for MCMC sampling to be used to propagate positions. Additionally, we present an accurate approximation to this process where the image alignment probability distribution can be described analytically, so that an astrometric query can be handled quickly and concisely, returning a location in the target frame that has its uncertainty specified in two spatial coordinates with covariance between them. We discuss generalizing this formalism to incorporate prior knowledge on astrometric components such as proper motion and parallax. An implementation of this scheme, including extensive documentation and examples, is available at \
+href{}{}
+%provide an explicit application to the case of bivariate normal distributions in the catalogue space of tie objects. %MCMC is used to generate a posterior estimate for the joint distribution of the transformation parameters. The use of distortion maps to represent the maximum likelihood transformation is also considered.
 %\asidebox{Text appearing in these boxes are guides for what to comment on.}
 \end{abstract}
 
 \keywords{}
 
-\tableofcontents
+%\tableofcontents
 
 \section{Introduction}
+
+Astrometry, along with photometry, is the central analytical tool of modern data-driven astrophysics. Differential astrometry, the measurement of the precise location on the celestial sphere of a source relative to other sources in the same field, informs questions about  physical associations and origins; for example, the location of different classes of supernovae and gamma-ray bursts, relative to galaxies provide powerful clues to the progenitors of such events. For multi-messenger science, frame registration---a form of differential astrometry---is used to associate a source observed at one waveband with a source observed at another; for example, an X-ray source location associated with a faint optical point source provides the spectral energy distributions of isolated neutron stars [REF], allowing tests of the equation of state of matter at high density []. A collection of differential astrometric measurements in time is used to find parallax and proper motion, providing, for example, the distance and kinematics that then yield fundamental parameters and origins of galactic stars. 
+
+[probabilatstic]
+
+distinction bebtween frame measurement. distortion.
+
+ as a function of time
 
 (JSB to contribute some opening text)
 
